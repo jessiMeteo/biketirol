@@ -82,3 +82,8 @@ var controlElevation = L.control.elevation({
     height: 300,
 }).addTo(map);
 controlElevation.load("data/etappe15.gpx");
+
+var osm2 = new L.TileLayer("https://wmts.kartetirol.at/gdi_summer/{z}/{x}/{y}.png", {
+        attribution: `Datenquelle: <a href="https://www.data.gv.at/katalog/dataset/land-tirol_elektronischekartetirol">eGrundkarte Tirol</a>`
+    });
+var miniMap = new L.Control.MiniMap(osm2).addTo(map);
