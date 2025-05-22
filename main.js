@@ -83,7 +83,16 @@ var controlElevation = L.control.elevation({
 }).addTo(map);
 controlElevation.load("data/etappe15.gpx");
 
-var osm2 = new L.TileLayer("https://wmts.kartetirol.at/gdi_summer/{z}/{x}/{y}.png", {
-        attribution: `Datenquelle: <a href="https://www.data.gv.at/katalog/dataset/land-tirol_elektronischekartetirol">eGrundkarte Tirol</a>`
-    });
-var miniMap = new L.Control.MiniMap(osm2).addTo(map);
+
+// minimap plugin mit Grundkarte Tirol Sommer als Layer
+var osm2 = new L.TileLayer("https://wmts.kartetirol.at/gdi_summer/{z}/{x}/{y}.png");
+var miniMap = new L.Control.MiniMap(osm2,{
+    toggleDisplay:true,
+    minimized: false,
+}).addTo(map);
+
+// Leaflet fullscreen plugin
+//const fullScreenControl = L.control.fullscreen();
+//fullScreenControl.addTo(map);
+//oder
+map.addControl(new L.Control.Fullscreen());
