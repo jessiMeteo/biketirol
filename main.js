@@ -94,5 +94,6 @@ var miniMap = new L.Control.MiniMap(osm2,{
 // Leaflet fullscreen plugin
 //const fullScreenControl = L.control.fullscreen();
 //fullScreenControl.addTo(map);
+// damit man kontrolle darüber hat
 //oder
 map.addControl(new L.Control.Fullscreen());
